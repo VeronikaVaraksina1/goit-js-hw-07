@@ -1,38 +1,27 @@
-const loginForm = document.querySelector(".login-form");
+const test = document.querySelector(".login-form");
 
-const test = () => {
+const response = {};
+
+const loginForm = (event) => {
   event.preventDefault();
 
-  const login = loginForm.event.target.elements.login.value;
-  const password = loginForm.event.target.elements.password.value;
+  const form = event.target;
+  const email = form.elements.email.value;
+  const password = form.elements.password.value;
 
-  if (login === "" || password === "") {
+  if (email === "" || password === "") {
     alert("All form fields must be filled in");
+    return;
   }
 
-  //   const obj = {
-  //     login,
-  //     password,
-  //   };
+  const data = new FormData(event.target);
+  data.forEach((value, key) => {
+    response[key] = value.trim();
+  });
 
-  //   console.log(obj);
+  console.log(response);
 
-  //   loginForm.reset();
+  test.reset();
 };
 
-loginForm.addEventListener("submit", test);
-
-// Обробка відправлення форми form.login-form повинна відбуватися за подією
-// submit.
-// Під час відправлення форми сторінка не повинна перезавантажуватися.
-// Якщо при сабміті у формі є незаповнені поля, виводь alert з
-// попередженням про те, що 'All form fields must be filled in'.
-//  Не додавай на інпути атрибут required, валідація має відбуватися
-//  саме через JS.
-// Якщо користувач заповнив усі поля і відправив форму, збери
-// значення полів в об'єкт з двома властивостями, де ключ — це ім'я
-// інпутів, а значення — відповідні значення цих інпутів, очищені від
-// пробілів по краях. Для доступу до елементів форми використовуй властивість
-//  elements.
-// При сабміті форми виведи об'єкт із введеними даними в консоль
-// і очисти значення полів форми методом reset.
+test.addEventListener("submit", loginForm);

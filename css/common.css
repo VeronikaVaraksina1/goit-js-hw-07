@@ -29,6 +29,8 @@ p {
   margin: 0;
 }
 
+/* task 1 */
+
 #categories {
   display: flex;
   flex-direction: column;
@@ -77,6 +79,8 @@ p {
   letter-spacing: 0.04em;
 }
 
+/* task 2 */
+
 .gallery {
   display: flex;
   justify-content: center;
@@ -89,6 +93,106 @@ p {
   display: block;
   object-fit: cover;
 }
+
+/* task 3 */
+
+#name-input,
+input[type="email"],
+input[type="password"],
+#controls > input {
+  display: block;
+
+  width: 360px;
+  height: 40px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  outline: transparent;
+  margin: 0 auto 16px auto;
+
+  color: #2e2f42;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+
+  transition: border-color 250ms ease-out;
+}
+
+#name-input:focus,
+#name-input:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+#controls > input:focus {
+  border-color: #000;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+}
+
+/* task 4 */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 408px;
+  padding: 24px;
+  border-radius: 8px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+form > label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+input[type="password"] {
+  margin-bottom: 16px;
+}
+
+button[type="submit"] {
+  max-width: 86px;
+}
+
+button[type="submit"],
+.change-color,
+#controls > button {
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+
+  padding: 8px 16px;
+  border: transparent;
+  border-radius: 8px;
+  outline: transparent;
+  background: #4e75ff;
+
+  transition: background-color 250ms ease-out;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus,
+.change-color:hover,
+.change-color:focus,
+#controls > button:hover,
+#controls > button:focus {
+  background-color: #6c8cff;
+}
+
+/* task 5 */
 
 .widget {
   display: flex;
@@ -114,57 +218,52 @@ p {
   background-color: #ffffff2c;
 }
 
-.change-color {
-  color: #fff;
+/* task 6 */
 
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-
+#controls {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 16px;
 
-  padding: 8px 16px;
-  border: transparent;
+  max-width: 486px;
+  padding: 32px;
   border-radius: 8px;
-  outline: transparent;
-  background: #4e75ff;
-
-  transition: background-color 250ms ease-out;
-}
-
-.change-color:hover,
-.change-color:focus {
-  background-color: #6c8cff;
-}
-
-#name-input {
-  display: block;
-
-  width: 360px;
-  height: 40px;
-  border: 1px solid #808080;
-  border-radius: 4px;
-  outline: transparent;
   margin: 0 auto 16px auto;
-
-  color: #2e2f42;
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-
-  transition: border-color 250ms ease-out;
+  background-color: #f6f6fe;
 }
 
-#name-input:hover,
-#name-input:focus {
-  border-color: #000;
-}
-
-h1 {
+#controls > input {
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #808080;
+  margin: 0;
   text-align: center;
+}
+
+#controls > button {
+  width: 120px;
+  padding: 8px 16px;
+}
+
+#controls > button[data-destroy] {
+  background-color: #ff4e4e;
+}
+
+#controls > button[data-destroy]:hover,
+#controls > button[data-destroy]:focus {
+  background-color: #ff7070;
+}
+
+#boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  max-width: 486px;
+  padding: 32px;
+  border-radius: 8px;
+  margin: 0 auto;
+  background-color: #f6f6fe;
 }
